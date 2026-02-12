@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///C:/Portal%20All%20Clean%20Masters/CleanMasters2/app/api/auth/login/route.ts"],"sourcesContent":["import { NextRequest, NextResponse } from \"next/server\"\r\nimport { store } from \"@/lib/server-store\"\r\n\r\nexport async function POST(req: NextRequest) {\r\n  const { email, password } = await req.json()\r\n  const result = store.login(email, password)\r\n  if (!result) {\r\n    return NextResponse.json({ error: \"Credenciales incorrectas\" }, { status: 401 })\r\n  }\r\n  return NextResponse.json(result)\r\n}\r\n"],"names":[],"mappings":";;;;AAAA;;;;;;;;AAGO,eAAe,KAAK,GAAgB;IACzC,MAAM,EAAE,KAAK,EAAE,QAAQ,EAAE,GAAG,MAAM,IAAI,IAAI;IAC1C,MAAM,SAAS,MAAM,KAAK,CAAC,OAAO;IAClC,IAAI,CAAC,QAAQ;QACX,OAAO,gJAAY,CAAC,IAAI,CAAC;YAAE,OAAO;QAA2B,GAAG;YAAE,QAAQ;QAAI;IAChF;IACA,OAAO,gJAAY,CAAC,IAAI,CAAC;AAC3B"}}]
+}

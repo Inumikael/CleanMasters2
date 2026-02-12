@@ -1,0 +1,271 @@
+// ============================================
+// AllClean ERP - Complete Database Schema
+// ============================================
+// 🆕 NUEVO - Crear carpeta prisma/ y copiar este archivo
+// Ubicación: CleanMasters2/prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================
+// USER MANAGEMENT
+// ============================================
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String   // Hashed with bcrypt
+  name      String
+  role      UserRole @default(USER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}
+
+enum UserRole {
+  ADMIN
+  MANAGER
+  USER
+}
+
+// ============================================
+// CLIENT MANAGEMENT
+// ============================================
+
+model Client {
+  id           String   @id @default(cuid())
+  name         String
+  email        String?
+  phone        String?
+  address      String?
+  city         String?
+  state        String?
+  zipCode      String?
+  zone         Zone     @default(NORTH)
+  notes        String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  
+  appointments Appointment[]
+  
+  @@map("clients")
+}
+
+enum Zone {
+  NORTH
+  SOUTH
+  EAST
+  WEST
+  CENTRAL
+}
+
+// ============================================
+// CREW MANAGEMENT
+// ============================================
+
+model Crew {
+  id           String       @id @default(cuid())
+  name         String
+  color        String       @default("#3B82F6")
+  isActive     Boolean      @default(true)
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+  
+  members      CrewMember[]
+  appointments Appointment[]
+  
+  @@map("crews")
+}
+
+model CrewMember {
+  id              String           @id @default(cuid())
+  crewId          String?
+  name            String
+  phone           String?
+  email           String?
+  photoUrl        String?
+  role            CrewMemberRole   @default(MEMBER)
+  experience      Int              @default(0) // XP: Total completed cleanings
+  isActive        Boolean          @default(true)
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  
+  crew            Crew?            @relation(fields: [crewId], references: [id], onDelete: SetNull)
+  
+  @@map("crew_members")
+}
+
+enum CrewMemberRole {
+  SUPERVISOR
+  TEAM_LEADER
+  MEMBER
+}
+
+// ============================================
+// APPOINTMENT MANAGEMENT (Smart Calendar)
+// ============================================
+
+model Appointment {
+  id              String              @id @default(cuid())
+  clientId        String
+  crewId          String?
+  
+  // Scheduling
+  scheduledDate   DateTime
+  startTime       String              // Format: "HH:MM"
+  endTime         String              // Format: "HH:MM"
+  durationMinutes Int                 @default(120)
+  
+  // Location
+  address         String
+  city            String?
+  zone            Zone                @default(NORTH)
+  
+  // Status & Smart Locking (15-minute window)
+  status          AppointmentStatus   @default(SCHEDULED)
+  isLocked        Boolean             @default(false)
+  lockedAt        DateTime?
+  
+  // Service Details
+  serviceType     String?
+  tasks           String[]            // Array of task descriptions
+  specialNotes    String?
+  estimatedCost   Float?
+  
+  // Metadata
+  createdAt       DateTime            @default(now())
+  updatedAt       DateTime            @updatedAt
+  completedAt     DateTime?
+  cancelledAt     DateTime?
+  
+  // Relations
+  client          Client              @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  crew            Crew?               @relation(fields: [crewId], references: [id], onDelete: SetNull)
+  history         AppointmentHistory[]
+  evidence        AppointmentEvidence[]
+  
+  @@index([scheduledDate])
+  @@index([clientId])
+  @@index([crewId])
+  @@index([status])
+  @@map("appointments")
+}
+
+enum AppointmentStatus {
+  SCHEDULED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+// ============================================
+// EVIDENCE SYSTEM (Before/After Photos)
+// ============================================
+
+model AppointmentEvidence {
+  id              String      @id @default(cuid())
+  appointmentId   String
+  type            EvidenceType
+  photoUrl        String
+  description     String?
+  uploadedAt      DateTime    @default(now())
+  
+  appointment     Appointment @relation(fields: [appointmentId], references: [id], onDelete: Cascade)
+  
+  @@map("appointment_evidence")
+}
+
+enum EvidenceType {
+  BEFORE
+  AFTER
+  DAMAGE
+  EXTRA
+}
+
+// ============================================
+// AUDIT HISTORY (Complete Trail)
+// ============================================
+
+model AppointmentHistory {
+  id              String      @id @default(cuid())
+  appointmentId   String
+  action          String      // e.g., "status_changed", "crew_assigned", "time_updated"
+  previousValue   String?
+  newValue        String?
+  performedBy     String?     // User name or "System"
+  notes           String?
+  timestamp       DateTime    @default(now())
+  
+  appointment     Appointment @relation(fields: [appointmentId], references: [id], onDelete: Cascade)
+  
+  @@map("appointment_history")
+}
+
+// ============================================
+// SYSTEM SETTINGS
+// ============================================
+
+model Settings {
+  id                    String   @id @default("singleton")
+  companyName           String   @default("AllClean Services")
+  companyEmail          String?
+  companyPhone          String?
+  companyAddress        String?
+  
+  // Business Hours
+  defaultStartHour      Int      @default(6)
+  defaultEndHour        Int      @default(20)
+  
+  // Scheduling Rules
+  bufferMinutes         Int      @default(30)  // Buffer between appointments
+  minAppointmentMinutes Int      @default(60)
+  maxAppointmentMinutes Int      @default(480)
+  
+  // Email Settings (Nodemailer)
+  smtpHost              String?
+  smtpPort              Int?
+  smtpUser              String?
+  smtpPassword          String?
+  emailFromAddress      String?
+  
+  updatedAt             DateTime @updatedAt
+  
+  @@map("settings")
+}
+
+// ============================================
+// FILE IMPORT TRACKING (CSV/Outlook)
+// ============================================
+
+model ImportLog {
+  id          String       @id @default(cuid())
+  fileName    String
+  fileType    ImportType
+  recordCount Int          @default(0)
+  status      ImportStatus @default(PENDING)
+  errorLog    String?
+  importedBy  String?
+  createdAt   DateTime     @default(now())
+  completedAt DateTime?
+  
+  @@map("import_logs")
+}
+
+enum ImportType {
+  CSV
+  ICS
+}
+
+enum ImportStatus {
+  PENDING
+  SUCCESS
+  FAILED
+  PARTIAL
+}

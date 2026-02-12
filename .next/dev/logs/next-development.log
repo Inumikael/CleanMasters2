@@ -1,0 +1,218 @@
+[00:00:01.247] Server  LOG     ✓ Ready in 845ms
+[00:00:01.980] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:02.345] Server  LOG     prisma:query "SELECT \"public\".\"crews\".\"id\", \"public\".\"crews\".\"name\", \"public\".\"crews\".\"color\", \"public\".\"crews\".\"isActive\", \"public\".\"crews\".\"createdAt\", \"public\".\"crews\".\"updatedAt\" FROM \"public\".\"crews\" WHERE 1=1 ORDER BY \"public\".\"crews\".\"name\" ASC OFFSET $1"
+[00:00:02.396] Server  LOG     prisma:query "SELECT \"public\".\"appointments\".\"id\", \"public\".\"appointments\".\"clientId\", \"public\".\"appointments\".\"crewId\", \"public\".\"appointments\".\"scheduledDate\", \"public\".\"appointments\".\"startTime\", \"public\".\"appointments\".\"endTime\", \"public\".\"appointments\".\"durationMinutes\", \"public\".\"appointments\".\"address\", \"public\".\"appointments\".\"city\", \"public\".\"appointments\".\"zone\"::text, \"public\".\"appointments\".\"status\"::text, \"public\".\"appointments\".\"isLocked\", \"public\".\"appointments\".\"lockedAt\", \"public\".\"appointments\".\"serviceType\", \"public\".\"appointments\".\"tasks\", \"public\".\"appointments\".\"specialNotes\", \"public\".\"appointments\".\"estimatedCost\", \"public\".\"appointments\".\"createdAt\", \"public\".\"appointments\".\"updatedAt\", \"public\".\"appointments\".\"completedAt\", \"public\".\"appointments\".\"cancelledAt\" FROM \"public\".\"appointments\" WHERE 1=1 ORDER BY \"public\".\"appointments\".\"scheduledDate\" ASC, \"public\".\"appointments\".\"startTime\" ASC OFFSET $1"
+[00:00:26.134] Server  LOG     📝 Intentando crear miembro para el equipo: "cmliski800000u9po45vvyvf1"
+[00:00:26.135] Server  LOG     📦 Datos recibidos: {}
+[00:00:26.137] Server  LOG     prisma:query "SELECT 1"
+[00:00:26.142] Server  LOG     prisma:error "\nInvalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create()` invocation in\nC:\\Portal All Clean Masters\\CleanMasters2\\.next\\dev\\server\\chunks\\[root-of-the-server]__1d23f228._.js:94:163\n\n  91 }\n  92 // Convertir experiencia a número (SOLUCIÓN AL ERROR COMÚN)\n  93 const experienceInt = parseInt(body.experience?.toString() || '0', 10);\n→ 94 const member = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create({\n       data: {\n         crewId: \"cmliski800000u9po45vvyvf1\",\n         name: \"Hector\",\n         role: \"Lider\",\n               ~~~~~~~\n         phone: \"6141605576\",\n         email: null,\n         experience: 0,\n         isActive: true,\n         photoUrl: null\n       }\n     })\n\nInvalid value for argument `role`. Expected CrewMemberRole."
+[00:00:26.144] Server  ERROR   ❌ Error detallado al crear miembro: "\nInvalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create()` invocation in\nC:\\Portal All Clean Masters\\CleanMasters2\\.next\\dev\\server\\chunks\\[root-of-the-server]__1d23f228._.js:94:163\n\n  91 }\n  92 // Convertir experiencia a número (SOLUCIÓN AL ERROR COMÚN)\n  93 const experienceInt = parseInt(body.experience?.toString() || '0', 10);\n→ 94 const member = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create({\n       data: {\n         crewId: \"cmliski800000u9po45vvyvf1\",\n         name: \"Hector\",\n         role: \"Lider\",\n               ~~~~~~~\n         phone: \"6141605576\",\n         email: null,\n         experience: 0,\n         isActive: true,\n         photoUrl: null\n       }\n     })\n\nInvalid value for argument `role`. Expected CrewMemberRole."
+[00:00:26.251] Browser ERROR   unhandledRejection: Error: Error interno: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].crewMember.create()` invocation in
+C:\Portal All Clean Masters\CleanMasters2\.next\dev\server\chunks\[root-of-the-server]__1d23f228._.js:94:163
+
+  91 }
+  92 // Convertir experiencia a número (SOLUCIÓN AL ERROR COMÚN)
+  93 const experienceInt = parseInt(body.experience?.toString() || '0', 10);
+→ 94 const member = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].crewMember.create({
+       data: {
+         crewId: "cmliski800000u9po45vvyvf1",
+         name: "Hector",
+         role: "Lider",
+               ~~~~~~~
+         phone: "6141605576",
+         email: null,
+         experience: 0,
+         isActive: true,
+         photoUrl: null
+       }
+     })
+
+Invalid value for argument `role`. Expected CrewMemberRole.
+[00:00:26.863] Server  LOG     📝 Intentando crear miembro para el equipo: "cmliski800000u9po45vvyvf1"
+[00:00:26.864] Server  LOG     📦 Datos recibidos: {}
+[00:00:26.868] Server  LOG     prisma:error "\nInvalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create()` invocation in\nC:\\Portal All Clean Masters\\CleanMasters2\\.next\\dev\\server\\chunks\\[root-of-the-server]__1d23f228._.js:94:163\n\n  91 }\n  92 // Convertir experiencia a número (SOLUCIÓN AL ERROR COMÚN)\n  93 const experienceInt = parseInt(body.experience?.toString() || '0', 10);\n→ 94 const member = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create({\n       data: {\n         crewId: \"cmliski800000u9po45vvyvf1\",\n         name: \"Hector\",\n         role: \"Lider\",\n               ~~~~~~~\n         phone: \"6141605576\",\n         email: null,\n         experience: 0,\n         isActive: true,\n         photoUrl: null\n       }\n     })\n\nInvalid value for argument `role`. Expected CrewMemberRole."
+[00:00:26.870] Server  ERROR   ❌ Error detallado al crear miembro: "\nInvalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create()` invocation in\nC:\\Portal All Clean Masters\\CleanMasters2\\.next\\dev\\server\\chunks\\[root-of-the-server]__1d23f228._.js:94:163\n\n  91 }\n  92 // Convertir experiencia a número (SOLUCIÓN AL ERROR COMÚN)\n  93 const experienceInt = parseInt(body.experience?.toString() || '0', 10);\n→ 94 const member = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create({\n       data: {\n         crewId: \"cmliski800000u9po45vvyvf1\",\n         name: \"Hector\",\n         role: \"Lider\",\n               ~~~~~~~\n         phone: \"6141605576\",\n         email: null,\n         experience: 0,\n         isActive: true,\n         photoUrl: null\n       }\n     })\n\nInvalid value for argument `role`. Expected CrewMemberRole."
+[00:00:26.989] Browser ERROR   unhandledRejection: Error: Error interno: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].crewMember.create()` invocation in
+C:\Portal All Clean Masters\CleanMasters2\.next\dev\server\chunks\[root-of-the-server]__1d23f228._.js:94:163
+
+  91 }
+  92 // Convertir experiencia a número (SOLUCIÓN AL ERROR COMÚN)
+  93 const experienceInt = parseInt(body.experience?.toString() || '0', 10);
+→ 94 const member = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].crewMember.create({
+       data: {
+         crewId: "cmliski800000u9po45vvyvf1",
+         name: "Hector",
+         role: "Lider",
+               ~~~~~~~
+         phone: "6141605576",
+         email: null,
+         experience: 0,
+         isActive: true,
+         photoUrl: null
+       }
+     })
+
+Invalid value for argument `role`. Expected CrewMemberRole.
+[00:00:27.004] Server  LOG     📝 Intentando crear miembro para el equipo: "cmliski800000u9po45vvyvf1"
+[00:00:27.004] Server  LOG     📦 Datos recibidos: {}
+[00:00:27.007] Server  LOG     prisma:error "\nInvalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create()` invocation in\nC:\\Portal All Clean Masters\\CleanMasters2\\.next\\dev\\server\\chunks\\[root-of-the-server]__1d23f228._.js:94:163\n\n  91 }\n  92 // Convertir experiencia a número (SOLUCIÓN AL ERROR COMÚN)\n  93 const experienceInt = parseInt(body.experience?.toString() || '0', 10);\n→ 94 const member = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create({\n       data: {\n         crewId: \"cmliski800000u9po45vvyvf1\",\n         name: \"Hector\",\n         role: \"Lider\",\n               ~~~~~~~\n         phone: \"6141605576\",\n         email: null,\n         experience: 0,\n         isActive: true,\n         photoUrl: null\n       }\n     })\n\nInvalid value for argument `role`. Expected CrewMemberRole."
+[00:00:27.008] Server  ERROR   ❌ Error detallado al crear miembro: "\nInvalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create()` invocation in\nC:\\Portal All Clean Masters\\CleanMasters2\\.next\\dev\\server\\chunks\\[root-of-the-server]__1d23f228._.js:94:163\n\n  91 }\n  92 // Convertir experiencia a número (SOLUCIÓN AL ERROR COMÚN)\n  93 const experienceInt = parseInt(body.experience?.toString() || '0', 10);\n→ 94 const member = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create({\n       data: {\n         crewId: \"cmliski800000u9po45vvyvf1\",\n         name: \"Hector\",\n         role: \"Lider\",\n               ~~~~~~~\n         phone: \"6141605576\",\n         email: null,\n         experience: 0,\n         isActive: true,\n         photoUrl: null\n       }\n     })\n\nInvalid value for argument `role`. Expected CrewMemberRole."
+[00:00:27.114] Browser ERROR   unhandledRejection: Error: Error interno: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].crewMember.create()` invocation in
+C:\Portal All Clean Masters\CleanMasters2\.next\dev\server\chunks\[root-of-the-server]__1d23f228._.js:94:163
+
+  91 }
+  92 // Convertir experiencia a número (SOLUCIÓN AL ERROR COMÚN)
+  93 const experienceInt = parseInt(body.experience?.toString() || '0', 10);
+→ 94 const member = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].crewMember.create({
+       data: {
+         crewId: "cmliski800000u9po45vvyvf1",
+         name: "Hector",
+         role: "Lider",
+               ~~~~~~~
+         phone: "6141605576",
+         email: null,
+         experience: 0,
+         isActive: true,
+         photoUrl: null
+       }
+     })
+
+Invalid value for argument `role`. Expected CrewMemberRole.
+[00:00:27.187] Server  LOG     📝 Intentando crear miembro para el equipo: "cmliski800000u9po45vvyvf1"
+[00:00:27.188] Server  LOG     📦 Datos recibidos: {}
+[00:00:27.190] Server  LOG     prisma:error "\nInvalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create()` invocation in\nC:\\Portal All Clean Masters\\CleanMasters2\\.next\\dev\\server\\chunks\\[root-of-the-server]__1d23f228._.js:94:163\n\n  91 }\n  92 // Convertir experiencia a número (SOLUCIÓN AL ERROR COMÚN)\n  93 const experienceInt = parseInt(body.experience?.toString() || '0', 10);\n→ 94 const member = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create({\n       data: {\n         crewId: \"cmliski800000u9po45vvyvf1\",\n         name: \"Hector\",\n         role: \"Lider\",\n               ~~~~~~~\n         phone: \"6141605576\",\n         email: null,\n         experience: 0,\n         isActive: true,\n         photoUrl: null\n       }\n     })\n\nInvalid value for argument `role`. Expected CrewMemberRole."
+[00:00:27.191] Server  ERROR   ❌ Error detallado al crear miembro: "\nInvalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create()` invocation in\nC:\\Portal All Clean Masters\\CleanMasters2\\.next\\dev\\server\\chunks\\[root-of-the-server]__1d23f228._.js:94:163\n\n  91 }\n  92 // Convertir experiencia a número (SOLUCIÓN AL ERROR COMÚN)\n  93 const experienceInt = parseInt(body.experience?.toString() || '0', 10);\n→ 94 const member = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create({\n       data: {\n         crewId: \"cmliski800000u9po45vvyvf1\",\n         name: \"Hector\",\n         role: \"Lider\",\n               ~~~~~~~\n         phone: \"6141605576\",\n         email: null,\n         experience: 0,\n         isActive: true,\n         photoUrl: null\n       }\n     })\n\nInvalid value for argument `role`. Expected CrewMemberRole."
+[00:00:27.300] Browser ERROR   unhandledRejection: Error: Error interno: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].crewMember.create()` invocation in
+C:\Portal All Clean Masters\CleanMasters2\.next\dev\server\chunks\[root-of-the-server]__1d23f228._.js:94:163
+
+  91 }
+  92 // Convertir experiencia a número (SOLUCIÓN AL ERROR COMÚN)
+  93 const experienceInt = parseInt(body.experience?.toString() || '0', 10);
+→ 94 const member = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].crewMember.create({
+       data: {
+         crewId: "cmliski800000u9po45vvyvf1",
+         name: "Hector",
+         role: "Lider",
+               ~~~~~~~
+         phone: "6141605576",
+         email: null,
+         experience: 0,
+         isActive: true,
+         photoUrl: null
+       }
+     })
+
+Invalid value for argument `role`. Expected CrewMemberRole.
+[00:00:27.351] Server  LOG     📝 Intentando crear miembro para el equipo: "cmliski800000u9po45vvyvf1"
+[00:00:27.352] Server  LOG     📦 Datos recibidos: {}
+[00:00:27.354] Server  LOG     prisma:error "\nInvalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create()` invocation in\nC:\\Portal All Clean Masters\\CleanMasters2\\.next\\dev\\server\\chunks\\[root-of-the-server]__1d23f228._.js:94:163\n\n  91 }\n  92 // Convertir experiencia a número (SOLUCIÓN AL ERROR COMÚN)\n  93 const experienceInt = parseInt(body.experience?.toString() || '0', 10);\n→ 94 const member = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create({\n       data: {\n         crewId: \"cmliski800000u9po45vvyvf1\",\n         name: \"Hector\",\n         role: \"Lider\",\n               ~~~~~~~\n         phone: \"6141605576\",\n         email: null,\n         experience: 0,\n         isActive: true,\n         photoUrl: null\n       }\n     })\n\nInvalid value for argument `role`. Expected CrewMemberRole."
+[00:00:27.356] Server  ERROR   ❌ Error detallado al crear miembro: "\nInvalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create()` invocation in\nC:\\Portal All Clean Masters\\CleanMasters2\\.next\\dev\\server\\chunks\\[root-of-the-server]__1d23f228._.js:94:163\n\n  91 }\n  92 // Convertir experiencia a número (SOLUCIÓN AL ERROR COMÚN)\n  93 const experienceInt = parseInt(body.experience?.toString() || '0', 10);\n→ 94 const member = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create({\n       data: {\n         crewId: \"cmliski800000u9po45vvyvf1\",\n         name: \"Hector\",\n         role: \"Lider\",\n               ~~~~~~~\n         phone: \"6141605576\",\n         email: null,\n         experience: 0,\n         isActive: true,\n         photoUrl: null\n       }\n     })\n\nInvalid value for argument `role`. Expected CrewMemberRole."
+[00:00:27.469] Browser ERROR   unhandledRejection: Error: Error interno: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].crewMember.create()` invocation in
+C:\Portal All Clean Masters\CleanMasters2\.next\dev\server\chunks\[root-of-the-server]__1d23f228._.js:94:163
+
+  91 }
+  92 // Convertir experiencia a número (SOLUCIÓN AL ERROR COMÚN)
+  93 const experienceInt = parseInt(body.experience?.toString() || '0', 10);
+→ 94 const member = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].crewMember.create({
+       data: {
+         crewId: "cmliski800000u9po45vvyvf1",
+         name: "Hector",
+         role: "Lider",
+               ~~~~~~~
+         phone: "6141605576",
+         email: null,
+         experience: 0,
+         isActive: true,
+         photoUrl: null
+       }
+     })
+
+Invalid value for argument `role`. Expected CrewMemberRole.
+[00:00:27.508] Server  LOG     📝 Intentando crear miembro para el equipo: "cmliski800000u9po45vvyvf1"
+[00:00:27.508] Server  LOG     📦 Datos recibidos: {}
+[00:00:27.511] Server  LOG     prisma:error "\nInvalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create()` invocation in\nC:\\Portal All Clean Masters\\CleanMasters2\\.next\\dev\\server\\chunks\\[root-of-the-server]__1d23f228._.js:94:163\n\n  91 }\n  92 // Convertir experiencia a número (SOLUCIÓN AL ERROR COMÚN)\n  93 const experienceInt = parseInt(body.experience?.toString() || '0', 10);\n→ 94 const member = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create({\n       data: {\n         crewId: \"cmliski800000u9po45vvyvf1\",\n         name: \"Hector\",\n         role: \"Lider\",\n               ~~~~~~~\n         phone: \"6141605576\",\n         email: null,\n         experience: 0,\n         isActive: true,\n         photoUrl: null\n       }\n     })\n\nInvalid value for argument `role`. Expected CrewMemberRole."
+[00:00:27.512] Server  ERROR   ❌ Error detallado al crear miembro: "\nInvalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create()` invocation in\nC:\\Portal All Clean Masters\\CleanMasters2\\.next\\dev\\server\\chunks\\[root-of-the-server]__1d23f228._.js:94:163\n\n  91 }\n  92 // Convertir experiencia a número (SOLUCIÓN AL ERROR COMÚN)\n  93 const experienceInt = parseInt(body.experience?.toString() || '0', 10);\n→ 94 const member = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create({\n       data: {\n         crewId: \"cmliski800000u9po45vvyvf1\",\n         name: \"Hector\",\n         role: \"Lider\",\n               ~~~~~~~\n         phone: \"6141605576\",\n         email: null,\n         experience: 0,\n         isActive: true,\n         photoUrl: null\n       }\n     })\n\nInvalid value for argument `role`. Expected CrewMemberRole."
+[00:00:27.624] Browser ERROR   unhandledRejection: Error: Error interno: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].crewMember.create()` invocation in
+C:\Portal All Clean Masters\CleanMasters2\.next\dev\server\chunks\[root-of-the-server]__1d23f228._.js:94:163
+
+  91 }
+  92 // Convertir experiencia a número (SOLUCIÓN AL ERROR COMÚN)
+  93 const experienceInt = parseInt(body.experience?.toString() || '0', 10);
+→ 94 const member = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].crewMember.create({
+       data: {
+         crewId: "cmliski800000u9po45vvyvf1",
+         name: "Hector",
+         role: "Lider",
+               ~~~~~~~
+         phone: "6141605576",
+         email: null,
+         experience: 0,
+         isActive: true,
+         photoUrl: null
+       }
+     })
+
+Invalid value for argument `role`. Expected CrewMemberRole.
+[00:00:27.679] Server  LOG     📝 Intentando crear miembro para el equipo: "cmliski800000u9po45vvyvf1"
+[00:00:27.679] Server  LOG     📦 Datos recibidos: {}
+[00:00:27.682] Server  LOG     prisma:error "\nInvalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create()` invocation in\nC:\\Portal All Clean Masters\\CleanMasters2\\.next\\dev\\server\\chunks\\[root-of-the-server]__1d23f228._.js:94:163\n\n  91 }\n  92 // Convertir experiencia a número (SOLUCIÓN AL ERROR COMÚN)\n  93 const experienceInt = parseInt(body.experience?.toString() || '0', 10);\n→ 94 const member = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create({\n       data: {\n         crewId: \"cmliski800000u9po45vvyvf1\",\n         name: \"Hector\",\n         role: \"Lider\",\n               ~~~~~~~\n         phone: \"6141605576\",\n         email: null,\n         experience: 0,\n         isActive: true,\n         photoUrl: null\n       }\n     })\n\nInvalid value for argument `role`. Expected CrewMemberRole."
+[00:00:27.683] Server  ERROR   ❌ Error detallado al crear miembro: "\nInvalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create()` invocation in\nC:\\Portal All Clean Masters\\CleanMasters2\\.next\\dev\\server\\chunks\\[root-of-the-server]__1d23f228._.js:94:163\n\n  91 }\n  92 // Convertir experiencia a número (SOLUCIÓN AL ERROR COMÚN)\n  93 const experienceInt = parseInt(body.experience?.toString() || '0', 10);\n→ 94 const member = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create({\n       data: {\n         crewId: \"cmliski800000u9po45vvyvf1\",\n         name: \"Hector\",\n         role: \"Lider\",\n               ~~~~~~~\n         phone: \"6141605576\",\n         email: null,\n         experience: 0,\n         isActive: true,\n         photoUrl: null\n       }\n     })\n\nInvalid value for argument `role`. Expected CrewMemberRole."
+[00:00:27.791] Browser ERROR   unhandledRejection: Error: Error interno: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].crewMember.create()` invocation in
+C:\Portal All Clean Masters\CleanMasters2\.next\dev\server\chunks\[root-of-the-server]__1d23f228._.js:94:163
+
+  91 }
+  92 // Convertir experiencia a número (SOLUCIÓN AL ERROR COMÚN)
+  93 const experienceInt = parseInt(body.experience?.toString() || '0', 10);
+→ 94 const member = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].crewMember.create({
+       data: {
+         crewId: "cmliski800000u9po45vvyvf1",
+         name: "Hector",
+         role: "Lider",
+               ~~~~~~~
+         phone: "6141605576",
+         email: null,
+         experience: 0,
+         isActive: true,
+         photoUrl: null
+       }
+     })
+
+Invalid value for argument `role`. Expected CrewMemberRole.
+[00:02:15.743] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:15.885] Server  LOG     prisma:query "SELECT 1"
+[00:02:15.885] Server  LOG     prisma:query "SELECT \"public\".\"crews\".\"id\", \"public\".\"crews\".\"name\", \"public\".\"crews\".\"color\", \"public\".\"crews\".\"isActive\", \"public\".\"crews\".\"createdAt\", \"public\".\"crews\".\"updatedAt\" FROM \"public\".\"crews\" WHERE 1=1 ORDER BY \"public\".\"crews\".\"name\" ASC OFFSET $1"
+[00:02:15.886] Server  LOG     prisma:query "SELECT \"public\".\"appointments\".\"id\", \"public\".\"appointments\".\"clientId\", \"public\".\"appointments\".\"crewId\", \"public\".\"appointments\".\"scheduledDate\", \"public\".\"appointments\".\"startTime\", \"public\".\"appointments\".\"endTime\", \"public\".\"appointments\".\"durationMinutes\", \"public\".\"appointments\".\"address\", \"public\".\"appointments\".\"city\", \"public\".\"appointments\".\"zone\"::text, \"public\".\"appointments\".\"status\"::text, \"public\".\"appointments\".\"isLocked\", \"public\".\"appointments\".\"lockedAt\", \"public\".\"appointments\".\"serviceType\", \"public\".\"appointments\".\"tasks\", \"public\".\"appointments\".\"specialNotes\", \"public\".\"appointments\".\"estimatedCost\", \"public\".\"appointments\".\"createdAt\", \"public\".\"appointments\".\"updatedAt\", \"public\".\"appointments\".\"completedAt\", \"public\".\"appointments\".\"cancelledAt\" FROM \"public\".\"appointments\" WHERE 1=1 ORDER BY \"public\".\"appointments\".\"scheduledDate\" ASC, \"public\".\"appointments\".\"startTime\" ASC OFFSET $1"
+[00:02:31.630] Server  LOG     📝 Solicitud de nuevo miembro: "Hector Murguia"
+[00:02:31.631] Server  LOG     🎭 Rol recibido: "Lider"
+[00:02:31.632] Server  LOG     prisma:query "SELECT 1"
+[00:02:31.634] Server  LOG     prisma:error "\nInvalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create()` invocation in\nC:\\Portal All Clean Masters\\CleanMasters2\\.next\\dev\\server\\chunks\\[root-of-the-server]__1d23f228._.js:112:163\n\n  109     dbRole = 'ASSISTANT';\n  110 }\n  111 const experienceInt = parseInt(body.experience?.toString() || '0', 10);\n→ 112 const member = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create({\n        data: {\n          crewId: \"cmliski800000u9po45vvyvf1\",\n          name: \"Hector Murguia\",\n          role: \"LEADER\",\n                ~~~~~~~~\n          phone: \"6141605576\",\n          email: null,\n          experience: 0,\n          isActive: true,\n          photoUrl: null\n        }\n      })\n\nInvalid value for argument `role`. Expected CrewMemberRole."
+[00:02:31.636] Server  ERROR   ❌ Error al guardar miembro: "\nInvalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create()` invocation in\nC:\\Portal All Clean Masters\\CleanMasters2\\.next\\dev\\server\\chunks\\[root-of-the-server]__1d23f228._.js:112:163\n\n  109     dbRole = 'ASSISTANT';\n  110 }\n  111 const experienceInt = parseInt(body.experience?.toString() || '0', 10);\n→ 112 const member = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__[\"prisma\"].crewMember.create({\n        data: {\n          crewId: \"cmliski800000u9po45vvyvf1\",\n          name: \"Hector Murguia\",\n          role: \"LEADER\",\n                ~~~~~~~~\n          phone: \"6141605576\",\n          email: null,\n          experience: 0,\n          isActive: true,\n          photoUrl: null\n        }\n      })\n\nInvalid value for argument `role`. Expected CrewMemberRole."
+[00:02:31.739] Browser ERROR   unhandledRejection: Error: Error: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].crewMember.create()` invocation in
+C:\Portal All Clean Masters\CleanMasters2\.next\dev\server\chunks\[root-of-the-server]__1d23f228._.js:112:163
+
+  109     dbRole = 'ASSISTANT';
+  110 }
+  111 const experienceInt = parseInt(body.experience?.toString() || '0', 10);
+→ 112 const member = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].crewMember.create({
+        data: {
+          crewId: "cmliski800000u9po45vvyvf1",
+          name: "Hector Murguia",
+          role: "LEADER",
+                ~~~~~~~~
+          phone: "6141605576",
+          email: null,
+          experience: 0,
+          isActive: true,
+          photoUrl: null
+        }
+      })
+
+Invalid value for argument `role`. Expected CrewMemberRole.
